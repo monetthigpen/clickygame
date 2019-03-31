@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "name": "Will",
+      "image": "https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/fresh-prince-of-bel-air-700x350.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Carlton",
+      "image": "https://vignette.wikia.nocookie.net/freshprince/images/a/ac/1carlton.jpg/revision/latest/scale-to-width-down/300?cb=20180626133412"
+    },
+    {
+      "id": 3,
+      "name": "Hillary",
+      "image": "https://vignette.wikia.nocookie.net/thefreshprinceofbelair/images/1/10/200px-Hilarybanks.jpg/revision/latest?cb=20111008161204"
+    },
+    {
+      "id": 4,
+      "name": "Ashley",
+      "image": "https://imgix.bustle.com/uploads/image/2017/12/20/c48553a6-c576-4cc7-a3d1-1cc55c182752-4b27dd26684c72265e76502863e2cb46-tatyana-ali-perfect-eyelashes.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70"
+    },
+    {
+      "id": 5,
+      "name": "Aun Viv",
+      "image": "https://www.essence.com/wp-content/uploads/2011/12/images/2011/12/29/janet-hubert-445x297.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Uncle Phil",
+      "image": "https://data.nbcstations.com/national/2017/dads-bracket/images/banks.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Urkel",
+      "image": "https://i.pinimg.com/originals/04/61/11/046111473580be34658a01f661a946b5.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Moesha",
+      "image": "https://img1.thelist.com/img/gallery/whatever-happened-to-brandy/intro-1530904837.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Lena",
+      "image": "https://vignette.wikia.nocookie.net/differentworld/images/3/3b/Differentjada.jpg/revision/latest?cb=20110425175622"
+      
+    },
+    {
+      "id": 10,
+      "name": "Denise",
+      "image": "https://vignette.wikia.nocookie.net/thecosbyshoww/images/b/b3/Denise.png/revision/latest?cb=20111212210112"
+    },
+    {
+      "id": 11,
+      "name": "Dorian",
+      "image": "https://i.pinimg.com/originals/45/cd/dc/45cddc6aaded204d31ce7f3d61ff610e.png"
+    },
+    {
+      "id": 12,
+      "name": "Tupac",
+      "image": "https://i.pinimg.com/originals/f6/6b/ec/f66bec5f9b9cecb42b03e904b68bb2bd.jpg",
+      "occupation": "Ahhhh! A Real Monster!",
+      "location": "Under a City Dump"
+    }
+  ]
+  
