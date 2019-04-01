@@ -1,6 +1,9 @@
 .title {
     width: 100%;
     text-align: center;
+    font-size: 3rem;
+    text-decoration: underline;
+    color:rgb(14, 17, 19);
     margin-bottom: 50px;
   }
   

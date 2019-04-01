@@ -1,4 +1,4 @@
-.card {
+/* .card {
     background: #fff;
     border-radius: 2px;
     height: 325px;
@@ -45,4 +45,9 @@
   .card > .remove:hover {
     color: #d50000;
   }
-  
+   */
+   img{
+     height: 200px;
+     width: 200px;
+     padding: .5%;
+   }
