@@ -7,16 +7,62 @@ import Jumbotron from "./components/Jumbotron";
 // import Counter from "./components/Counter";
 import  images from "./images.json";
 
+function shuffleImages(arr){
+  for (let i = arr.length - 1; i > 0; i--) {
+    let c = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[c]] = [arr[c], arr[i]];
+  }
+  return arr;
+};
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     images,
-    count: 0
+    count: 0,
+    highscore: 0,
+    message: "",
+    clickedImg: []
   };
 
-  handleIncrement = () => {
+  
+  handleClick =  (id, event) => {
+    
+    if (this.state.clickedImg.indexOf(id) === -1) {
+      this.handleIncrement();
+      this.setState({ clickedImg: this.state.clickedImg.concat(id) });
+    }else {
+      this.handleReset();
+    } 
+    
+  }
+  handleReset = () => {
+    this.setState({
+      count: 0,
+      highScore: this.state.highScore,
+      message: "You already clicked that! Lets try again!",
+      clickedImg: []
+    });
+    this.handleShuffle();
+  };
+  handleShuffle = () => {
+    let shuffledImages = shuffleImages(images);
+    this.setState({ images: shuffledImages });
+  };
+
+  handleIncrement = id => {
     // We always use the setState method to update a component's state
-    this.setState({ count: this.state.count + 1 });
+    const newScore = this.state.count + 1;
+    this.setState({
+      count: newScore,
+      message: ""
+    });
+    if (newScore >= this.state.highScore) {
+      this.setState({ highScore: newScore });
+    }
+    else if (newScore === 12) {
+      this.setState({ message: "You win!" });
+    }
+    this.handleShuffle();
   };
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
@@ -24,22 +70,24 @@ class App extends Component {
       <div>
         <div>
         <nav className="navbar navbar-dark bg-dark navbar-fixed-top">
-            <a className="navbar-brand" href="#"> Clicky Game</a>
-            <span class="navbar-brand mb-0 h1">Click an image to begin!</span>
-            <span class="navbar-brand mb-0 h1">Score: {this.state.count} | Top Score:</span> 
+            <a className="navbar-brand" href="/"> Clicky Game</a>
+            <span className="navbar-brand mb-0 h1">{this.state.message}</span>
+            <span className="navbar-brand mb-0 h1">Score: {this.state.count} | Top Score:{this.highScore}</span> 
         </nav>
         </div>
        <Jumbotron/> 
       <Wrapper>
         
-        {/* <Title>Clicky Game</Title> */}
+        
         {this.state.images.map(image => (
           <ImageCard
             id={image.id}
             key={image.id}
             name={image.name}
             image={image.image}
-            
+            handleIncrement={this.handleIncrement}
+            shuffleImages={this.shuffleImages}
+            handleClick={this.handleClick}
           />
         ))}
       </Wrapper>
