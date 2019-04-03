@@ -19,7 +19,7 @@ class App extends Component {
   state = {
     images,
     count: 0,
-    highscore: 0,
+    highScore: 0,
     message: "",
     clickedImg: []
   };
@@ -31,11 +31,11 @@ class App extends Component {
       this.handleIncrement();
       this.setState({ clickedImg: this.state.clickedImg.concat(id) });
     }else {
-      this.handleReset();
+      this.Reset();
     } 
     
   }
-  handleReset = () => {
+  Reset = () => {
     this.setState({
       count: 0,
       highScore: this.state.highScore,
@@ -49,17 +49,17 @@ class App extends Component {
     this.setState({ images: shuffledImages });
   };
 
-  handleIncrement = id => {
-    // We always use the setState method to update a component's state
-    const newScore = this.state.count + 1;
+  handleIncrement = () => {
+    
+    const score = this.state.count + 1;
     this.setState({
-      count: newScore,
+      count: score,
       message: "Keep Going!"
     });
-    if (newScore === this.state.highScore) {
-      this.setState({ highScore: newScore });
+    if (score > this.state.highScore) {
+      this.setState({ highScore: score });
     }
-    else if (newScore === 10) {
+    else if (score === 10) {
       this.setState({ message: "You win!" });
     }
     this.handleShuffle();
@@ -72,7 +72,7 @@ class App extends Component {
         <nav className="navbar navbar-dark bg-dark navbar-fixed-top">
             <a className="navbar-brand" href="/"> Clicky Game</a>
             <span className="navbar-brand mb-0 h1">{this.state.message}</span>
-            <span className="navbar-brand mb-0 h1">Score: {this.state.count} </span> 
+            <span className="navbar-brand mb-0 h1">Score: {this.state.count} | Top Score: {this.state.highScore} </span> 
         </nav>
         </div>
        <Jumbotron/> 
