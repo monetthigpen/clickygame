@@ -54,12 +54,12 @@ class App extends Component {
     const newScore = this.state.count + 1;
     this.setState({
       count: newScore,
-      message: ""
+      message: "Keep Going!"
     });
-    if (newScore >= this.state.highScore) {
+    if (newScore === this.state.highScore) {
       this.setState({ highScore: newScore });
     }
-    else if (newScore === 12) {
+    else if (newScore === 10) {
       this.setState({ message: "You win!" });
     }
     this.handleShuffle();
@@ -72,7 +72,7 @@ class App extends Component {
         <nav className="navbar navbar-dark bg-dark navbar-fixed-top">
             <a className="navbar-brand" href="/"> Clicky Game</a>
             <span className="navbar-brand mb-0 h1">{this.state.message}</span>
-            <span className="navbar-brand mb-0 h1">Score: {this.state.count} | Top Score:{this.highScore}</span> 
+            <span className="navbar-brand mb-0 h1">Score: {this.state.count} </span> 
         </nav>
         </div>
        <Jumbotron/> 
